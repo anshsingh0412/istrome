@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
@@ -28,10 +28,28 @@
 
     /* Header */
     header{position:sticky;top:0;z-index:999;background:rgba(7,19,38,0.85);backdrop-filter:blur(8px)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-    .logo{font-size:26px;font-weight:800;color:var(--accent1)}
-    nav a{margin-left:20px;color:var(--muted);font-weight:600;transition:.3s}
-    nav a:hover{color:var(--accent2)}
+    .nav{display:flex;align-items:center;justify-content:center;padding:16px 0}
+    .logo{
+      font-size:48px;
+      font-weight:800;
+      color:var(--accent1);
+      text-align:center;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      animation: floatLogo 5s ease-in-out infinite;
+    }
+    .logo img{
+      height:60px;
+      width:60px;
+      border-radius:12px;
+    }
+    @keyframes floatLogo {
+      0%, 100% { transform: translate(0,0); }
+      25% { transform: translate(5px,-5px); }
+      50% { transform: translate(0,-8px); }
+      75% { transform: translate(-5px,-5px); }
+    }
 
     /* Hero */
     .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:80px 0}
@@ -103,18 +121,10 @@
   <!-- Header -->
   <header>
     <div class="container nav">
-      <div class="logo">ISTROME</div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#arrivals">New Arrivals</a>
-        <a href="#features">Why Us</a>
-        <a href="#about">About</a>
-        <a href="#journey">Journey</a>
-        <a href="#blog">Blog</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="logo">
+        <img src="https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?_gl=1*ml2na7*_ga*NjA4MTUxMjQ0LjE3NTgzODQ1NjY.*_ga_8JE65Q40S6*czE3NTgzODQ1NjUkbzEkZzEkdDE3NTgzODQ1NzEkajU0JGwwJGgw" alt="Istrome Logo">
+        ISTROME
+      </div>
     </div>
   </header>
 
@@ -241,4 +251,30 @@
     <div class="container newsletter">
       <h2 class="section-title">Stay Updated</h2>
       <input type="email" placeholder="Enter your email"><button>Subscribe</button>
-    </
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message" rows="5"></textarea>
+        <button>Send Message</button>
+      </form>
+      <div class="social">
+        <a href="#">&#xf09a;</a>
+        <a href="#">&#xf16d;</a>
+        <a href="#">&#xf099;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 <strong>Istrome</strong>
+  </footer>
+</body>
+</html>
