@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Istrome — Premium Footwear Brand</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#071326;
+      --bg2:#0b1b2a;
+      --accent1:#06b6d4;
+      --accent2:#3b82f6;
+      --muted:#9aa6b2;
+      --max-w:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:#e6eef6;line-height:1.6;
+    }
+    h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif;font-weight:700}
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:999;background:rgba(7,19,38,0.85);backdrop-filter:blur(8px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .logo{font-size:26px;font-weight:800;color:var(--accent1)}
+    nav a{margin-left:20px;color:var(--muted);font-weight:600;transition:.3s}
+    nav a:hover{color:var(--accent2)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:80px 0}
+    .hero h1{font-size:48px;margin-bottom:16px}
+    .hero h3{margin-bottom:16px}
+    .hero p{color:var(--muted);margin-bottom:24px}
+    .btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:14px 26px;border-radius:12px;color:#fff;font-weight:600;text-decoration:none;transition:.3s;display:inline-block}
+    .btn:hover{transform:translateY(-4px)}
+    .shoe-img{animation:float 6s ease-in-out infinite;width:100%;max-width:460px;filter:drop-shadow(0 20px 30px rgba(0,0,0,.5))}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+
+    /* Sections */
+    section{padding:80px 0}
+    .section-title{text-align:center;font-size:36px;margin-bottom:40px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+    .card{background:rgba(255,255,255,0.05);border-radius:20px;padding:20px;text-align:center;transition:.3s}
+    .card:hover{transform:translateY(-8px);box-shadow:0 12px 28px rgba(0,0,0,.4)}
+    .card img{width:200px;margin-bottom:16px;transition:.3s}
+    .card:hover img{transform:scale(1.05) rotate(-3deg)}
+    .price{color:var(--accent1);font-weight:700;margin-top:8px}
+
+    /* About */
+    #about p{max-width:900px;margin:0 auto;text-align:center;color:#cbd5e1;font-size:18px}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;text-align:center}
+    .feature{background:rgba(255,255,255,0.05);padding:24px;border-radius:16px}
+
+    /* Timeline */
+    .timeline{position:relative;padding-left:40px}
+    .timeline:before{content:"";position:absolute;left:20px;top:0;bottom:0;width:4px;background:var(--accent1)}
+    .event{margin-bottom:40px;position:relative}
+    .event:before{content:"";position:absolute;left:-30px;top:10px;width:20px;height:20px;border-radius:50%;background:var(--accent2)}
+    .event h3{margin-bottom:6px}
+
+    /* Blog */
+    .blog{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+    .blog-card{background:rgba(255,255,255,0.05);border-radius:16px;padding:20px}
+    .blog-card img{width:100%;border-radius:12px;margin-bottom:14px}
+    .blog-card h3{margin-bottom:8px}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+    .testimonial{background:rgba(255,255,255,0.05);padding:20px;border-radius:16px}
+    .testimonial p{color:#cbd5e1;font-style:italic;margin-bottom:12px}
+    .testimonial h4{color:var(--accent2)}
+
+    /* Newsletter */
+    .newsletter{text-align:center}
+    .newsletter input{padding:14px;border:none;border-radius:12px;width:60%;max-width:400px;margin-right:10px;background:rgba(255,255,255,0.08);color:#fff}
+    .newsletter button{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:14px 20px;border:none;border-radius:12px;color:#fff;font-weight:600;cursor:pointer}
+    .newsletter button:hover{transform:translateY(-3px)}
+
+    /* Contact */
+    form{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+    input,textarea{padding:14px;border:none;border-radius:12px;background:rgba(255,255,255,0.08);color:#fff;font-size:16px}
+    button{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:14px;border:none;border-radius:12px;color:#fff;font-weight:600;cursor:pointer}
+    button:hover{transform:translateY(-3px)}
+    .social{margin-top:20px;text-align:center}
+    .social a{margin:0 10px;color:var(--accent1);font-size:20px}
+
+    /* Footer */
+    footer{text-align:center;padding:28px;color:var(--muted);font-size:14px}
+    footer strong{color:#fff}
+    @media(max-width:768px){.hero{grid-template-columns:1fr;text-align:center}.hero h1{font-size:36px}}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="logo">ISTROME</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#arrivals">New Arrivals</a>
+        <a href="#features">Why Us</a>
+        <a href="#about">About</a>
+        <a href="#journey">Journey</a>
+        <a href="#blog">Blog</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero container" id="home">
+    <div>
+      <h1>Step Into the Future</h1>
+      <h3 style="color:#06b6d4;margin-bottom:16px;">Istrome Founder: Ansh Thakur</h3>
+      <p>Experience premium shoes crafted with precision engineering, designed for comfort, and built for style.</p>
+      <a href="#products" class="btn">Explore Collection</a>
+    </div>
+    <div>
+      <img src="https://png.pngtree.com/thumb_back/fh260/background/20230630/pngtree-vibrant-unisex-sports-shoes-in-white-canvas-with-towering-soles-a-image_3698893.jpg" alt="Shoe" class="shoe-img">
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products">
+    <div class="container">
+      <h2 class="section-title">Our Collection</h2>
+      <div class="grid">
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYJDosHHQJKNhkZYGo0L0hweL5za8_TR-nxg&s"><h3>Urban Runner</h3><p>Lightweight • Stylish</p><div class="price">₹3,499</div></div>
+        <div class="card"><img src="https://imagescdn.reebok.in/img/app/product/3/39628882-13000239.jpg?auto=format&w=390"><h3>Street Classic</h3><p>Cushioned • Durable</p><div class="price">₹4,199</div></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo9kasPMgCg9F95MZf2HbfnaRqeP8lkPFWOA&s"><h3>Aero Glide</h3><p>Water-resistant • Flexible</p><div class="price">₹3,899</div></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYWXB1nWSq1grnajhoErrghdIIr28f3ciQuQ&s"><h3>Desert Trek</h3><p>Trail • Rugged</p><div class="price">₹4,499</div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80"><h3>Night Flex</h3><p>Reflective • Sleek</p><div class="price">₹3,799</div></div>
+        <div class="card"><img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80"><h3>SportX Pro</h3><p>Performance • Sturdy</p><div class="price">₹5,299</div></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwY5srR8rSpkzEH64Xj0b1nIzb5asHQ43PCw&s"><h3>Retro Vibe</h3><p>Vintage • Cool</p><div class="price">₹3,299</div></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6rYyMwhPQjL4xDys70w6YqEmgwPXgEH-U6w&s"><h3>PowerLift</h3><p>Gym • Heavy Duty</p><div class="price">₹5,599</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section id="arrivals">
+    <div class="container">
+      <h2 class="section-title">New Arrivals</h2>
+      <div class="grid">
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHjlrlBCASJKNnDcsrgkpSFPz8fuDMNSABWQ&s"><h3>Zen Walk</h3><p>Ultra-soft • Minimal</p><div class="price">₹4,299</div></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2lBYGFWGi6aydRvPLnHmRTpxu293IRtCCIw&s"><h3>Edge Racer</h3><p>Fast • Breathable</p><div class="price">₹4,799</div></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW1ystbzAlgidCjxPow3rzBx6SkUNMaVAzVg&s"><h3>Cloud Step</h3><p>Air Cushion • Soft</p><div class="price">₹5,099</div></div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ4F7an7krtlZBjgGemiR0ozn5QyHoF6xJiQ&s"><h3>Fusion High</h3><p>High-top • Bold</p><div class="price">₹5,499</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <h2 class="section-title">Why Choose Istrome?</h2>
+      <div class="features">
+        <div class="feature"><h3>Premium Quality</h3><p>Crafted from world-class materials.</p></div>
+        <div class="feature"><h3>Modern Design</h3><p>Trendy styles for every occasion.</p></div>
+        <div class="feature"><h3>Comfort First</h3><p>Engineered for all-day wear.</p></div>
+        <div class="feature"><h3>Global Trendsetter</h3><p>Inspired by fashion capitals.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Istrome</h2>
+      <p>
+        At <strong>Istrome</strong>, we believe shoes are more than just fashion – they are a reflection of lifestyle, confidence, and innovation.
+        Our vision is to craft <span style="color:#38bdf8;">premium footwear</span> that blends comfort, durability, and modern aesthetics.
+        Every pair is designed with precision engineering and built from world-class materials.
+        From urban streets to high-performance sports, Istrome shoes redefine the future of footwear fashion.
+      </p>
+    </div>
+  </section>
+
+  <!-- Journey Timeline -->
+  <section id="journey">
+    <div class="container">
+      <h2 class="section-title">Our Journey</h2>
+      <div class="timeline">
+        <div class="event"><h3>2018</h3><p>Istrome was founded with a vision to revolutionize footwear.</p></div>
+        <div class="event"><h3>2020</h3><p>Expanded into 10+ cities with premium sneakers.</p></div>
+        <div class="event"><h3>2023</h3><p>Launched global e-commerce platform.</p></div>
+        <div class="event"><h3>2025</h3><p>Recognized as a leading shoe brand in Asia.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog">
+    <div class="container">
+      <h2 class="section-title">Style Guide</h2>
+      <div class="blog">
+        <div class="blog-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrw89fk6VLST7b0-umGL8149uqWm-yNbbjVA&s">
+          <h3>How to Style Sneakers with Jeans</h3>
+          <p>Learn the perfect ways to pair your Istrome sneakers with casual denim outfits.</p>
+        </div>
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80">
+          <h3>Top 5 Shoe Care Tips</h3>
+          <p>Keep your shoes looking brand new with these easy care tricks.</p>
+        </div>
+        <div class="blog-card">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80">
+          <h3>Choosing Shoes for Performance</h3>
+          <p>Find the perfect footwear for running, gym, and high-performance sports.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <div class="testimonials">
+        <div class="testimonial"><p>"Best shoes I’ve ever owned. Super comfortable and stylish!"</p><h4>— Rahul M.</h4></div>
+        <div class="testimonial"><p>"Istrome shoes are perfect for my daily runs and office wear."</p><h4>— Sneha K.</h4></div>
+        <div class="testimonial"><p>"High quality, trendy designs and worth every rupee."</p><h4>— Aman P.</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section>
+    <div class="container newsletter">
+      <h2 class="section-title">Stay Updated</h2>
+      <input type="email" placeholder="Enter your email"><button>Subscribe</button>
+    </
